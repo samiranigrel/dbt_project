@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: dim_customers
+    tests:
+      - unique
+      - not_null
+      - relationships:
+          to: ref('stg_customers')
+          field: customer_id
+  - name: fct_orders
+    tests:
+      - unique
+      - not_null
+      - relationships:
+          to: ref('stg_orders')
+          field: order_id
+  - name: customers_daily_summary
+    tests:
+      - unique
+      - not_null
+  - name: all_dates
+    tests:
+      - unique
+      - not_null
+  - name: stg_payments
+    tests:
+      - unique
+      - not_null
+          
+
+
+          
